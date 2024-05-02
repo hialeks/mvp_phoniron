@@ -1,8 +1,8 @@
-import 'src/data/database_repository.dart';
-import 'src/data/mock_database.dart';
-import 'src/domain/address.dart';
-import 'src/domain/user_profile.dart';
-import 'src/domain/user_type.dart';
+import 'data/database_repository.dart';
+import 'data/mock_database.dart';
+import 'domain/address.dart';
+import 'domain/user_profile.dart';
+import 'domain/user_type.dart';
 
 void main() {
   var userProfile = UserProfile(
