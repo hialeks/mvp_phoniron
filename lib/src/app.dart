@@ -1,6 +1,8 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/data/mock_database.dart';
+import 'package:mvp_phoniron/src/features/authentication/presentation/login_screen.dart';
 import 'package:mvp_phoniron/src/features/login/domain/address.dart';
 import 'package:mvp_phoniron/src/features/login/domain/user_profile.dart';
 import 'package:mvp_phoniron/src/features/login/domain/user_type.dart';
@@ -44,6 +46,14 @@ class App extends StatelessWidget {
     DatabaseRepository databaseRepository = MockDatabase();
     databaseRepository.registerUser(userProfile);
 
-    return const MaterialApp();
+    return MaterialApp(
+      theme: FlexThemeData.light(scheme: FlexScheme.blumineBlue),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.blumineBlue),
+      themeMode: ThemeMode.system,
+      home: LoginScreen(
+        databaseRepository: databaseRepository,
+      ),
+      // OverviewScreen(databaseRepository: databaseRepository),
+    );
   }
 }

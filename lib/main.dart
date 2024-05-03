@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_phoniron/src/app.dart';
 
 void main() {
   runApp(const MaterialApp(
-      // home: Screen01(),
-      ));
+    debugShowCheckedModeBanner: false,
+    home: App(),
+  ));
 }
