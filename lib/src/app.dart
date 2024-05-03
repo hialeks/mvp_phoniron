@@ -1,4 +1,3 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/data/mock_database.dart';
@@ -47,9 +46,13 @@ class App extends StatelessWidget {
     databaseRepository.registerUser(userProfile);
 
     return MaterialApp(
-      theme: FlexThemeData.light(scheme: FlexScheme.blumineBlue),
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.blumineBlue),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ThemeMode.system,
+      // theme: FlexThemeData.light(scheme: FlexScheme.blumineBlue),
+      // darkTheme: FlexThemeData.dark(scheme: FlexScheme.blumineBlue),
+      // themeMode: ThemeMode.system,
       home: LoginScreen(
         databaseRepository: databaseRepository,
       ),
