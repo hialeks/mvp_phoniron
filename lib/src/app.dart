@@ -3,8 +3,8 @@ import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/data/mock_database.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/login_screen.dart';
 import 'package:mvp_phoniron/src/features/login/domain/address.dart';
-import 'package:mvp_phoniron/src/features/login/domain/user_profile.dart';
-import 'package:mvp_phoniron/src/features/login/domain/user_type.dart';
+import 'package:mvp_phoniron/src/features/login/presentation/user_profile.dart';
+import 'package:mvp_phoniron/src/features/login/presentation/user_type.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

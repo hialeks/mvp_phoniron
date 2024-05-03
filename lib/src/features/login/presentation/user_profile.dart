@@ -1,5 +1,5 @@
-import 'address.dart';
-import 'primary_key.dart';
+import '../domain/address.dart';
+import '../domain/primary_key.dart';
 import 'user_type.dart';
 
 class UserProfile extends PrimaryKey {
