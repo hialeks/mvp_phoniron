@@ -38,12 +38,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 32),
                   TextFormField(
                     decoration: const InputDecoration(
-                      fillColor: Color(0xFF006973),
-                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF006973)),
+                        borderRadius: BorderRadius.all(Radius.circular(11)),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF006973)),
+                        borderRadius: BorderRadius.all(Radius.circular(11)),
+                      ),
+                      filled: true,
+                      fillColor: Color(0xFFF5FAFB), // Собствен цвят на фона
                       labelText: "Email oder Phone number",
+                      labelStyle:
+                          TextStyle(fontSize: 12, color: Color(0xFF006973)),
                       suffixIcon: Icon(
                         Icons.email,
-                        color: Color(0xFF006973),
+                        color: Color(0xFF006973), // Цвят на иконата
                       ),
                     ),
                   ),
@@ -51,8 +61,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                     obscureText: !showPassword,
                     decoration: InputDecoration(
-                      border: const OutlineInputBorder(),
+                      enabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF006973)),
+                        borderRadius: BorderRadius.all(Radius.circular(11)),
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF006973)),
+                        borderRadius: BorderRadius.all(Radius.circular(11)),
+                      ),
                       labelText: "Passwort",
+                      labelStyle: const TextStyle(
+                          fontSize: 12, color: Color(0xFF006973)),
                       suffixIcon: IconButton(
                         color: const Color(0xFF006973),
                         onPressed: () {
