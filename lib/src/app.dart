@@ -47,9 +47,9 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(useMaterial3: true),
-      darkTheme: ThemeData.dark(useMaterial3: true),
-      themeMode: ThemeMode.system,
+      // theme: ThemeData.light(useMaterial3: true),
+      // darkTheme: ThemeData.dark(useMaterial3: true),
+      // themeMode: ThemeMode.system,
       // theme: FlexThemeData.light(scheme: FlexScheme.blumineBlue),
       // darkTheme: FlexThemeData.dark(scheme: FlexScheme.blumineBlue),
       // themeMode: ThemeMode.system,
