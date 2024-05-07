@@ -91,7 +91,7 @@ class App extends StatelessWidget {
           segmentedButtonBorderWidth: 0.5,
           inputDecoratorSchemeColor: SchemeColor.secondary,
           inputDecoratorBackgroundAlpha: 167,
-          inputDecoratorBorderSchemeColor: SchemeColor.tertiary,
+          inputDecoratorBorderSchemeColor: SchemeColor.primary,
           inputDecoratorRadius: 11.0,
           inputDecoratorBorderWidth: 0.5,
           inputDecoratorFocusedBorderWidth: 1.0,

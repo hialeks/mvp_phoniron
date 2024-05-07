@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
+import 'package:mvp_phoniron/src/features/authentication/presentation/demo_account.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/faq_screen.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/sign_up_screen.dart';
 import 'package:mvp_phoniron/src/features/overview/presentation/home_screen.dart';
@@ -41,7 +42,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Divider(),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -56,16 +59,29 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text(" I "),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const FaqScreen(),
+                              builder: (context) => const DemoAccount(),
                             ),
                           );
                         },
-                        child: const Text("Demo Account"),
+                        child: const Text("Demo"),
                       ),
-                      const Divider(),
+                      const Text(" I "),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpScreen(
+                                databaseRepository: widget.databaseRepository,
+                              ),
+                            ),
+                          );
+                        },
+                        child: const Text("Register"),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 16),
@@ -75,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       labelText: "Email oder Phone number",
                       suffixIcon: Icon(
                         Icons.email,
-                        //  color: Color(0xFF006973),
+                        color: Color.fromARGB(107, 0, 105, 115),
                       ),
                     ),
                   ),
@@ -93,14 +109,27 @@ class _LoginScreenState extends State<LoginScreen> {
                         icon: showPassword
                             ? const Icon(Icons.visibility_off)
                             : const Icon(Icons.visibility),
+                        color: const Color.fromARGB(107, 0, 105, 115),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 6),
-                  const Row(
+                  // const SizedBox(height: 0),
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text("Paswort vergessen?"),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpScreen(
+                                databaseRepository: widget.databaseRepository,
+                              ),
+                            ),
+                          );
+                        },
+                        child: const Text("Passwort vergessen?"),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 24),
@@ -117,28 +146,48 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       );
                     },
+                    style: ButtonStyle(
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(270, 40)),
+                    ),
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text("Login"),
                     ),
                   ),
                   const SizedBox(height: 32),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Noch keinen Account?"),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignUpScreen(
-                                databaseRepository: widget.databaseRepository,
-                              ),
-                            ),
-                          );
-                        },
-                        child: const Text("Zur Registrierung"),
+                      Text("Oder Login mit"),
+                    ],
+                  ),
+                  const SizedBox(height: 32),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/app_elements/google_icon.png",
+                        width: 25,
+                        height: 25,
+                      ),
+                      const SizedBox(width: 42),
+                      Image.asset(
+                        "assets/app_elements/apple_icon.png",
+                        width: 25,
+                        height: 25,
+                      ),
+                      const SizedBox(width: 42),
+                      Image.asset(
+                        "assets/app_elements/linkedin_icon.png",
+                        width: 25,
+                        height: 25,
+                      ),
+                      const SizedBox(width: 42),
+                      Image.asset(
+                        "assets/app_elements/xing_icon.png",
+                        width: 25,
+                        height: 25,
                       ),
                     ],
                   ),
