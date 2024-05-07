@@ -48,6 +48,10 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // Theme config for FlexColorScheme version 7.3.x. Make sure you use
+// same or higher package version, but still same major version. If you
+// use a lower package version, some properties may not be supported.
+// In that case remove them after copying this theme to your app.
       theme: FlexThemeData.light(
         colors: const FlexSchemeColor(
           primary: Color(0xff1b828c),
@@ -73,7 +77,6 @@ class App extends StatelessWidget {
           filledButtonRadius: 7.0,
           elevatedButtonRadius: 7.0,
           elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
-          elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
           outlinedButtonRadius: 7.0,
           toggleButtonsRadius: 11.0,
           toggleButtonsSchemeColor: SchemeColor.primary,
@@ -81,13 +84,8 @@ class App extends StatelessWidget {
           toggleButtonsBorderSchemeColor: SchemeColor.primary,
           segmentedButtonRadius: 11.0,
           segmentedButtonSchemeColor: SchemeColor.primary,
-          inputDecoratorSchemeColor: SchemeColor.primary,
-          inputDecoratorBackgroundAlpha: 7,
-          inputDecoratorBorderSchemeColor: SchemeColor.tertiary,
-          inputDecoratorRadius: 11.0,
-          inputDecoratorBorderWidth: 1.0,
-          inputDecoratorFocusedBorderWidth: 1.5,
-          inputDecoratorPrefixIconSchemeColor: SchemeColor.tertiary,
+          inputDecoratorBorderType: FlexInputBorderType.underline,
+          inputDecoratorUnfocusedBorderIsColored: false,
           fabUseShape: true,
           fabRadius: 17.0,
           fabSchemeColor: SchemeColor.surfaceVariant,
@@ -152,7 +150,6 @@ class App extends StatelessWidget {
           filledButtonRadius: 7.0,
           elevatedButtonRadius: 7.0,
           elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
-          elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
           outlinedButtonRadius: 7.0,
           toggleButtonsRadius: 11.0,
           toggleButtonsSchemeColor: SchemeColor.primary,
@@ -160,9 +157,8 @@ class App extends StatelessWidget {
           toggleButtonsBorderSchemeColor: SchemeColor.primary,
           segmentedButtonRadius: 11.0,
           segmentedButtonSchemeColor: SchemeColor.primary,
-          inputDecoratorRadius: 11.0,
-          inputDecoratorBorderWidth: 1.0,
-          inputDecoratorFocusedBorderWidth: 1.5,
+          inputDecoratorBorderType: FlexInputBorderType.underline,
+          inputDecoratorUnfocusedBorderIsColored: false,
           fabUseShape: true,
           fabRadius: 17.0,
           fabSchemeColor: SchemeColor.surfaceVariant,
@@ -204,6 +200,8 @@ class App extends StatelessWidget {
       ),
 // If you do not have a themeMode switch, uncomment this line
 // to let the device system mode control the theme mode:
+// themeMode: ThemeMode.system,
+
       themeMode: ThemeMode.light,
       home: LoginScreen(
         databaseRepository: databaseRepository,

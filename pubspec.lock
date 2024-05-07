@@ -134,6 +134,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_easy_faq:
+    dependency: "direct main"
+    description:
+      name: flutter_easy_faq
+      sha256: "3c42458e7537797f0f1c886a7c68e296f3050902cebc2dbe2566c4d7d62b2f56"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
+  flutter_faq:
+    dependency: "direct main"
+    description:
+      name: flutter_faq
+      sha256: e2c671e7eff08ba8978e5f1d19862299bdced86bd0d46be1b20921aba3397380
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1+1"
   flutter_launcher_icons:
     dependency: "direct main"
     description:

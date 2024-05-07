@@ -48,7 +48,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       labelText: "Passwort",
-                      icon: const Icon(Icons.password),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -67,7 +66,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       labelText: "Passwort wiederholen",
-                      icon: const Icon(Icons.password),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -81,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  ElevatedButton(
+                  FilledButton(
                     onPressed: () {
                       // TODO: registrierungs logik einbauen
                       // nach der Registrierung
