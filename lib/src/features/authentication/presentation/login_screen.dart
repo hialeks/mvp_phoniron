@@ -38,7 +38,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 170,
                     ),
                   ),
-                  const SizedBox(height: 0),
+
+                  // Text Menu
+
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -59,10 +62,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text(" I "),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const DemoAccount(),
+                              builder: (context) => DemoAccount(
+                                databaseRepository: widget.databaseRepository,
+                              ),
                             ),
                           );
                         },
@@ -84,7 +89,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16),
+
+                  // Text Fields
+
+                  const SizedBox(height: 24),
                   TextFormField(
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
@@ -113,7 +121,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  // const SizedBox(height: 0),
+
+                  // Passwort vergessen
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -133,6 +143,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(height: 24),
+
+                  // Login Button
+
                   FilledButton(
                     onPressed: () {
                       // TODO: login logik einbauen
@@ -159,35 +172,61 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Oder Login mit"),
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                  color: Color.fromARGB(107, 147, 156, 157),
+                                  thickness: 0.7,
+                                  indent: 80.0,
+                                  endIndent: 10.0),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text("Oder Login mit"),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                  color: Color.fromARGB(107, 147, 156, 157),
+                                  thickness: 0.7,
+                                  indent: 10.0,
+                                  endIndent: 80.0),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
+
+                  // Login Providers
+
                   const SizedBox(height: 32),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
                         "assets/app_elements/google_icon.png",
-                        width: 25,
-                        height: 25,
+                        width: 27,
+                        height: 27,
                       ),
-                      const SizedBox(width: 42),
+                      const SizedBox(width: 50),
                       Image.asset(
                         "assets/app_elements/apple_icon.png",
-                        width: 25,
-                        height: 25,
+                        width: 27,
+                        height: 27,
                       ),
-                      const SizedBox(width: 42),
+                      const SizedBox(width: 50),
                       Image.asset(
                         "assets/app_elements/linkedin_icon.png",
-                        width: 25,
-                        height: 25,
+                        width: 27,
+                        height: 27,
                       ),
-                      const SizedBox(width: 42),
+                      const SizedBox(width: 50),
                       Image.asset(
                         "assets/app_elements/xing_icon.png",
-                        width: 25,
-                        height: 25,
+                        width: 27,
+                        height: 27,
                       ),
                     ],
                   ),
