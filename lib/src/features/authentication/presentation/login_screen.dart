@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   TextFormField(
                     obscureText: !showPassword,
                     decoration: InputDecoration(
@@ -161,7 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     style: ButtonStyle(
                       minimumSize:
-                          MaterialStateProperty.all(const Size(270, 40)),
+                          MaterialStateProperty.all(const Size(270, 50)),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
@@ -227,6 +227,25 @@ class _LoginScreenState extends State<LoginScreen> {
                         "assets/app_elements/xing_icon.png",
                         width: 27,
                         height: 27,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Noch keinen Account?"),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUpScreen(
+                                  databaseRepository: widget.databaseRepository,
+                                ),
+                              ));
+                        },
+                        child: const Text("Zur Registrierung"),
                       ),
                     ],
                   ),

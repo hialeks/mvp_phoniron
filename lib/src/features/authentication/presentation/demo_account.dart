@@ -33,7 +33,7 @@ class _DemoAccountState extends State<DemoAccount> {
                     ),
                   ),
 
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 32),
 
                   // Login Button
 
@@ -55,7 +55,7 @@ class _DemoAccountState extends State<DemoAccount> {
                       child: Text("Demo Account"),
                     ),
                   ),
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 64),
                   TextButton(
                     onPressed: () {
                       Navigator.pushReplacement(
