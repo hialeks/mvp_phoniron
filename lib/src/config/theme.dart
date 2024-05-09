@@ -1,12 +1,11 @@
-// Theme config for FlexColorScheme version 7.3.x. Make sure you use
-// same or higher package version, but still same major version. If you
-// use a lower package version, some properties may not be supported.
-// In that case remove them after copying this theme to your app.
-theme: FlexThemeData.light(
+import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter/material.dart';
+
+ThemeData lightTheme = FlexThemeData.light(
   colors: const FlexSchemeColor(
     primary: Color(0xff1b828c),
     primaryContainer: Color(0xffd9f7f9),
-    secondary: Color(0xffe0e0e0),
+    secondary: Color(0xfff5fafb),
     secondaryContainer: Color(0xffeeeeee),
     tertiary: Color(0xff78909c),
     tertiaryContainer: Color(0xffc3e7ff),
@@ -21,33 +20,39 @@ theme: FlexThemeData.light(
   tooltipsMatchBackground: true,
   subThemesData: const FlexSubThemesData(
     blendOnLevel: 7,
-    splashType: FlexSplashType.inkRipple,
+    thinBorderWidth: 0.5,
+    thickBorderWidth: 1.0,
+    splashType: FlexSplashType.instantSplash,
     defaultRadius: 11.0,
     adaptiveRadius: FlexAdaptive.all(),
+    defaultRadiusAdaptive: 7.0,
     filledButtonRadius: 7.0,
     elevatedButtonRadius: 7.0,
     elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
-    elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
     outlinedButtonRadius: 7.0,
     toggleButtonsRadius: 11.0,
     toggleButtonsSchemeColor: SchemeColor.primary,
     toggleButtonsUnselectedSchemeColor: SchemeColor.primary,
     toggleButtonsBorderSchemeColor: SchemeColor.primary,
-    segmentedButtonRadius: 11.0,
+    toggleButtonsBorderWidth: 0.5,
+    segmentedButtonRadius: 7.0,
     segmentedButtonSchemeColor: SchemeColor.primary,
-    inputDecoratorSchemeColor: SchemeColor.primary,
-    inputDecoratorBackgroundAlpha: 7,
-    inputDecoratorBorderSchemeColor: SchemeColor.tertiary,
+    segmentedButtonBorderWidth: 0.5,
+    inputDecoratorSchemeColor: SchemeColor.secondary,
+    inputDecoratorBackgroundAlpha: 167,
+    inputDecoratorBorderSchemeColor: SchemeColor.primary,
     inputDecoratorRadius: 11.0,
-    inputDecoratorBorderWidth: 1.0,
-    inputDecoratorFocusedBorderWidth: 1.5,
-    inputDecoratorPrefixIconSchemeColor: SchemeColor.tertiary,
+    inputDecoratorBorderWidth: 0.5,
+    inputDecoratorFocusedBorderWidth: 1.0,
+    inputDecoratorPrefixIconSchemeColor: SchemeColor.primary,
+    inputSelectionHandleSchemeColor: SchemeColor.secondary,
     fabUseShape: true,
     fabRadius: 17.0,
     fabSchemeColor: SchemeColor.surfaceVariant,
     chipRadius: 9.0,
-    popupMenuRadius: 6.0,
-    popupMenuElevation: 4.0,
+    cardRadius: 11.0,
+    popupMenuRadius: 7.0,
+    popupMenuElevation: 1.0,
     alignedDropdown: true,
     dialogElevation: 3.0,
     dialogRadius: 20.0,
@@ -80,8 +85,10 @@ theme: FlexThemeData.light(
   useMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
-),
-darkTheme: FlexThemeData.dark(
+  //! .copyWith(textTheme: GoogleFonts.(z.B.)ubuntuTextTheme(),
+);
+
+ThemeData darkTheme = FlexThemeData.dark(
   colors: const FlexSchemeColor(
     primary: Color(0xff82bace),
     primaryContainer: Color(0xff04666f),
@@ -100,29 +107,34 @@ darkTheme: FlexThemeData.dark(
   subThemesData: const FlexSubThemesData(
     blendOnLevel: 10,
     blendTextTheme: true,
-    splashType: FlexSplashType.inkRipple,
+    splashType: FlexSplashType.instantSplash,
     defaultRadius: 11.0,
     adaptiveRadius: FlexAdaptive.all(),
+    defaultRadiusAdaptive: 7.0,
+    thinBorderWidth: 0.5,
+    thickBorderWidth: 1.0,
     filledButtonRadius: 7.0,
     elevatedButtonRadius: 7.0,
     elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
-    elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
     outlinedButtonRadius: 7.0,
     toggleButtonsRadius: 11.0,
     toggleButtonsSchemeColor: SchemeColor.primary,
     toggleButtonsUnselectedSchemeColor: SchemeColor.primary,
     toggleButtonsBorderSchemeColor: SchemeColor.primary,
-    segmentedButtonRadius: 11.0,
+    toggleButtonsBorderWidth: 0.5,
+    segmentedButtonRadius: 7.0,
     segmentedButtonSchemeColor: SchemeColor.primary,
+    segmentedButtonBorderWidth: 0.5,
     inputDecoratorRadius: 11.0,
-    inputDecoratorBorderWidth: 1.0,
-    inputDecoratorFocusedBorderWidth: 1.5,
+    inputDecoratorBorderWidth: 0.5,
+    inputDecoratorFocusedBorderWidth: 1.0,
     fabUseShape: true,
     fabRadius: 17.0,
     fabSchemeColor: SchemeColor.surfaceVariant,
     chipRadius: 9.0,
-    popupMenuRadius: 6.0,
-    popupMenuElevation: 4.0,
+    cardRadius: 11.0,
+    popupMenuRadius: 7.0,
+    popupMenuElevation: 1.0,
     alignedDropdown: true,
     dialogElevation: 3.0,
     dialogRadius: 20.0,
@@ -155,7 +167,4 @@ darkTheme: FlexThemeData.dark(
   useMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
-),
-// If you do not have a themeMode switch, uncomment this line
-// to let the device system mode control the theme mode:
-// themeMode: ThemeMode.system,
+);
