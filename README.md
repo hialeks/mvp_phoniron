@@ -1,4 +1,4 @@
-<img src="assets/logos/logo_black.png" alt="phoniron logo" height="200">
+<center><img src="assets/logos/logo_black.png" alt="phoniron logo" height="270">
 
 https://phoniron.com
 
