@@ -1,4 +1,5 @@
-# phoniron App - https://phoniron.com
+# phoniron App
+https://phoniron.com
 
 # Anwendungsbeschreibung
 
