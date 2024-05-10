@@ -1,6 +1,4 @@
-# mvp_phoniron
-
-# phoniron App
+# phoniron App - https://phoniron.com
 
 # Anwendungsbeschreibung
 
