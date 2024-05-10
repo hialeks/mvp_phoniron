@@ -49,14 +49,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-
       darkTheme: darkTheme,
-
       themeMode: ThemeMode.light,
       home: LoginScreen(
         databaseRepository: databaseRepository,
       ),
-      // OverviewScreen(databaseRepository: databaseRepository),
     );
   }
 }

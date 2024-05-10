@@ -163,36 +163,48 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   // Login Providers
 
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        "assets/app_elements/google_icon.png",
-                        width: 27,
-                        height: 27,
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/app_elements/google_icon.png',
+                          width: 25,
+                          height: 25,
+                        ),
+                        onPressed: () {},
                       ),
-                      const SizedBox(width: 50),
-                      Image.asset(
-                        "assets/app_elements/apple_icon.png",
-                        width: 27,
-                        height: 27,
+                      const SizedBox(width: 30),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/app_elements/apple_icon.png',
+                          width: 25,
+                          height: 25,
+                        ),
+                        onPressed: () {},
                       ),
-                      const SizedBox(width: 50),
-                      Image.asset(
-                        "assets/app_elements/linkedin_icon.png",
-                        width: 27,
-                        height: 27,
+                      const SizedBox(width: 30),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/app_elements/linkedin_icon.png',
+                          width: 25,
+                          height: 25,
+                        ),
+                        onPressed: () {},
                       ),
-                      const SizedBox(width: 50),
-                      Image.asset(
-                        "assets/app_elements/xing_icon.png",
-                        width: 27,
-                        height: 27,
+                      const SizedBox(width: 30),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/app_elements/xing_icon.png',
+                          width: 25,
+                          height: 25,
+                        ),
+                        onPressed: () {},
                       ),
                     ],
                   ),
-                  const SizedBox(height: 22),
+                  const SizedBox(height: 6),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
