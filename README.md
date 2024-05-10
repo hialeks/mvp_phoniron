@@ -1,7 +1,7 @@
 # phoniron App
 https://phoniron.com
 
-<img src="assets/logos/logo_black.png" alt="phoniron logo" width="200" height="100">
+<img src="assets/logos/logo_black.png" alt="phoniron logo"height="200">
 
 # Anwendungsbeschreibung
 
