@@ -1,6 +1,9 @@
-<center><img src="assets/logos/logo_black.png" alt="phoniron logo" height="270">
+<div style="text-align:center">
+  <img src="assets/logos/logo_black.png" alt="phoniron logo" height="270">
+  https://phoniron.com
+</div>
 
-https://phoniron.com
+
 
 # Anwendungsbeschreibung
 
