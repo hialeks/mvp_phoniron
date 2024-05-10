@@ -18,7 +18,7 @@ class _FaqScreen extends State<FaqScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('phoniron / FAQ'), // Заглавие на вашата апликация
+        title: const Text('phoniron / FAQ'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

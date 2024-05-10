@@ -10,6 +10,35 @@ class DemoHome extends StatefulWidget {
 class _DemoHomeState extends State<DemoHome> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      drawer: const Drawer(),
+      appBar: AppBar(
+        centerTitle: false,
+        title: const Text("phoniron"), // Тук са премахнати квадратните скоби
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.help_outline),
+        //     onPressed: () {},
+        //   ),
+        // ],
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
+      ),
+      body: const SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: Column(children: []),
+        ),
+      ),
+    );
   }
 }
