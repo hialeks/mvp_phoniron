@@ -94,7 +94,8 @@ Vorschlag zum Gruppieren von Kontakten nach Spaces
 - Freunde / enge Kontakte
 - Familie
 - Kollegen
-- Geschäft // + Erstellen eines Space
+- Geschäft
+- Erstellen eines Space
 
 Nach Abschluss des Prozesses erhält der Benutzer Zugriff auf alle Funktionen der Abschnitte Netzwerk, Spaces und Gruppen
 
