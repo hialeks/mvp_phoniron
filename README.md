@@ -1,6 +1,9 @@
 # phoniron App
 https://phoniron.com
 
+![phoniron logo](.assets/logos/logo_white.png)
+
+
 # Anwendungsbeschreibung
 
 Die von mir ausgewählte Anwendung zeichnet sich durch eine ziemlich hohe Komplexität und komplexe Funktionen aus, einschließlich der Profilregistrierung, dem Importieren vorhandener Daten usw. Einige der Hauptfunktionen sind wie folgt:
