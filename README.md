@@ -4,7 +4,7 @@
 # Anwendungsbeschreibung
 https://phoniron.com
 
-Die von mir ausgewählte Anwendung zeichnet sich durch eine ziemlich hohe Komplexität und komplexe Funktionen aus, einschließlich der Profilregistrierung, dem Importieren vorhandener Daten usw. Einige der Hauptfunktionen sind wie folgt:
+Die Anwendung zeichnet sich durch ein hohes Maß an Komplexität und komplexe Funktionen aus, einschließlich Profilregistrierung, Import vorhandener Daten usw. Einige der wichtigsten Funktionen sind:
 
 ## 1. Starten der Anwendung
 
