@@ -44,8 +44,10 @@ class _DemoHomeState extends State<DemoHome> {
                 leading: CircleAvatar(
                   child: Icon(MdiIcons.accountMultiplePlus),
                 ),
+
                 title: const Text("Network"),
                 // subtitle: const Text("Subtitle"),
+                baseColor: const Color(0xffF1F6F7),
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
@@ -73,7 +75,7 @@ class _DemoHomeState extends State<DemoHome> {
                               ),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Icon(MdiIcons.accountCogOutline),
                                   Text(
@@ -104,7 +106,7 @@ class _DemoHomeState extends State<DemoHome> {
                               ),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Icon(MdiIcons.cardAccountDetailsOutline),
                                   Text(
