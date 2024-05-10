@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div style="align:center">
   <img src="assets/logos/logo_black.png" alt="phoniron logo" height="270">
 </div>
 
