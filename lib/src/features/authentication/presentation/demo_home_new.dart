@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/config/drawer.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class DemoHomeNew extends StatefulWidget {
   const DemoHomeNew({super.key});
@@ -12,14 +13,13 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: buildDrawer(context),
       appBar: AppBar(
         centerTitle: false,
         title: const Text("phoniron"),
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(Icons.menu), // Wegen Icon
+              icon: const Icon(Icons.menu),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -28,75 +28,114 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
           },
         ),
       ),
-      body: const SafeArea(
+      drawer: buildDrawer(context),
+      body: SafeArea(
         child: Column(
           children: <Widget>[
-            ExpansionTile(
-              title: Text("Network"),
-              // subtitle: Text('Communication at Your Fingertips'),
-              backgroundColor: Color.fromARGB(117, 242, 246, 247), // #F7FDFE
-              collapsedBackgroundColor: Color(0xffF1F6F7),
-              shape: Border.fromBorderSide(BorderSide.none),
-
-              children: <Widget>[
-                ListTile(
-                  title: Text('Menu'),
-                ),
-              ],
-            ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             ExpansionTile(
+              title: const Text("Network"),
+              backgroundColor: const Color.fromARGB(117, 242, 246, 247),
+              collapsedBackgroundColor: const Color(0xffF1F6F7),
+              shape: const Border.fromBorderSide(BorderSide.none),
+              leading: const CircleAvatar(
+                backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                child: Icon(PhosphorIconsLight.treeStructure),
+              ),
+              children: <Widget>[
+                //! Scheiße!!!
+
+                _tabBarNetwork(),
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            const ExpansionTile(
               title: Text("Spaces"),
-              // subtitle: Text('Communication at Your Fingertips'),
-              backgroundColor: Color.fromARGB(117, 237, 240, 255), // #F7FDFE
+              backgroundColor: Color.fromARGB(117, 237, 240, 255),
               collapsedBackgroundColor: Color(0xffEDF0FF),
               shape: Border.fromBorderSide(BorderSide.none),
-
+              leading: CircleAvatar(
+                backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                child: Icon(PhosphorIconsLight.planet),
+              ),
               children: <Widget>[
                 ListTile(
                   title: Text('Menu'),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            ExpansionTile(
+            const ExpansionTile(
               title: Text("Groups"),
-              // subtitle: Text('Communication at Your Fingertips'),
-              backgroundColor: Color.fromARGB(117, 231, 241, 255), // #F7FDFE
+              backgroundColor: Color.fromARGB(117, 231, 241, 255),
               collapsedBackgroundColor: Color(0xffE7F1FF),
               shape: Border.fromBorderSide(BorderSide.none),
-
+              leading: CircleAvatar(
+                backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                child: Icon(PhosphorIconsLight.usersThree),
+              ),
               children: <Widget>[
                 ListTile(
                   title: Text('Menu'),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            ExpansionTile(
+            const ExpansionTile(
               title: Text("Markt"),
-              // subtitle: Text('Communication at Your Fingertips'),
-              backgroundColor: Color.fromARGB(117, 241, 238, 238), // #F7FDFE
+              backgroundColor: Color.fromARGB(117, 241, 238, 238),
               collapsedBackgroundColor: Color(0xffF1EEEE),
               shape: Border.fromBorderSide(BorderSide.none),
-
+              leading: CircleAvatar(
+                backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                child: Icon(PhosphorIconsLight.qrCode),
+              ),
               children: <Widget>[
                 ListTile(
                   title: Text('Menu'),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _tabBarNetwork() {
+    return const DefaultTabController(
+      length: 3,
+      child: Column(
+        children: [
+          TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+          SizedBox(height: 8),
+          Expanded(
+            child: TabBarView(
+              children: [
+                Icon(Icons.directions_car),
+                Icon(Icons.directions_transit),
+                Icon(Icons.directions_bike),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
