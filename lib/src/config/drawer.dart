@@ -19,7 +19,7 @@ Widget buildDrawer(BuildContext context) {
           ),
         ),
         ListTile(
-          leading: const Icon(Icons.logout),
+          leading: const Icon(Icons.close),
           title: const Text('Exit App'),
           onTap: () {
             // Update the state of the app
@@ -82,7 +82,7 @@ Widget buildDrawer(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(Icons.exit_to_app),
+          leading: const Icon(Icons.logout),
           title: const Text('Log Out'),
           onTap: () {
             // Update the state of the app

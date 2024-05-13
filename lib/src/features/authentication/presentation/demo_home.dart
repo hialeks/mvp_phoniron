@@ -246,7 +246,7 @@ class _DemoHomeState extends State<DemoHome> {
                       leading: CircleAvatar(
                         backgroundColor:
                             const Color.fromARGB(0, 255, 255, 255), // EEF0FF
-                        child: Icon(MdiIcons.fileTreeOutline),
+                        child: Icon(MdiIcons.accountCard),
                       ),
 
                       title: Text(
