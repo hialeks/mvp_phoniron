@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/faq_screen.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 Widget buildDrawer(BuildContext context) {
   return Drawer(
@@ -10,16 +10,17 @@ Widget buildDrawer(BuildContext context) {
       children: [
         const DrawerHeader(
           decoration: BoxDecoration(
-            color: Color(0xff1b828c),
+            //color: Color(0xff1b828c),
+            color: Color.fromARGB(148, 27, 131, 140),
           ),
           child: Text(
             'phoniron',
             style: TextStyle(
-                color: Colors.white, fontSize: 23, fontWeight: FontWeight.w500),
+                color: Colors.white, fontSize: 27, fontWeight: FontWeight.w500),
           ),
         ),
         ListTile(
-          leading: const Icon(Icons.close),
+          leading: const Icon(PhosphorIconsLight.x),
           title: const Text('Exit App'),
           onTap: () {
             // Update the state of the app
@@ -28,8 +29,12 @@ Widget buildDrawer(BuildContext context) {
             Navigator.pop(context);
           },
         ),
+        const Divider(
+          endIndent: 100,
+          indent: 10,
+        ),
         ListTile(
-          leading: const Icon(Icons.help_outline),
+          leading: const Icon(PhosphorIconsLight.question),
           title: const Text("FAQ"),
           onTap: () {
             Navigator.push(
@@ -42,7 +47,7 @@ Widget buildDrawer(BuildContext context) {
           },
         ),
         ListTile(
-          leading: Icon(MdiIcons.newspaperVariantMultipleOutline),
+          leading: const Icon(PhosphorIconsLight.newspaper),
           title: const Text("What's new?"),
           onTap: () {
             // Update the state of the app
@@ -52,7 +57,7 @@ Widget buildDrawer(BuildContext context) {
           },
         ),
         ListTile(
-          leading: Icon(MdiIcons.chartLine),
+          leading: const Icon(PhosphorIconsLight.chartLine),
           title: const Text('Statistics'),
           onTap: () {
             // Update the state of the app
@@ -62,7 +67,7 @@ Widget buildDrawer(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(Icons.update),
+          leading: const Icon(PhosphorIconsLight.clockClockwise),
           title: const Text('Update'),
           onTap: () {
             // Update the state of the app
@@ -72,7 +77,7 @@ Widget buildDrawer(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(Icons.info_outline),
+          leading: const Icon(PhosphorIconsLight.info),
           title: const Text('About'),
           onTap: () {
             // Update the state of the app
@@ -81,21 +86,13 @@ Widget buildDrawer(BuildContext context) {
             Navigator.pop(context);
           },
         ),
-        ListTile(
-          leading: const Icon(Icons.logout),
-          title: const Text('Log Out'),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
+        const Divider(
+          endIndent: 100,
+          indent: 10,
         ),
         ListTile(
-          title: const Text(
-            'App Version 0.01',
-            style: TextStyle(fontSize: 11),
-          ),
+          leading: const Icon(PhosphorIconsLight.signOut),
+          title: const Text('Log Out'),
           onTap: () {
             // Update the state of the app
             // ...

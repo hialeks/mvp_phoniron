@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/config/drawer.dart';
 import 'package:mvp_phoniron/src/config/tab_bar_network.dart';
@@ -20,7 +21,7 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(PhosphorIconsLight.list),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -31,82 +32,107 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
       ),
       drawer: buildDrawer(context),
       body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            const SizedBox(
-              height: 8,
-            ),
-            ExpansionTile(
-              title: const Text("Network"),
-              backgroundColor: const Color.fromARGB(117, 242, 246, 247),
-              collapsedBackgroundColor: const Color(0xffF1F6F7),
-              shape: const Border.fromBorderSide(BorderSide.none),
-              leading: const CircleAvatar(
-                backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                child: Icon(PhosphorIconsLight.treeStructure),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(
+                height: 8,
               ),
-              children: <Widget>[
-                tabBarNetwork(),
-              ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            const ExpansionTile(
-              title: Text("Spaces"),
-              backgroundColor: Color.fromARGB(117, 237, 240, 255),
-              collapsedBackgroundColor: Color(0xffEDF0FF),
-              shape: Border.fromBorderSide(BorderSide.none),
-              leading: CircleAvatar(
-                backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                child: Icon(PhosphorIconsLight.planet),
-              ),
-              children: <Widget>[
-                ListTile(
-                  title: Text('Menu'),
+              ExpansionTile(
+                title: const Text("Network"),
+                backgroundColor: const Color.fromARGB(117, 242, 246, 247),
+                collapsedBackgroundColor: const Color(0xffF1F6F7),
+                shape: const Border.fromBorderSide(BorderSide.none),
+                leading: const badges.Badge(
+                  showBadge: true,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.treeStructure),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            const ExpansionTile(
-              title: Text("Groups"),
-              backgroundColor: Color.fromARGB(117, 231, 241, 255),
-              collapsedBackgroundColor: Color(0xffE7F1FF),
-              shape: Border.fromBorderSide(BorderSide.none),
-              leading: CircleAvatar(
-                backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                child: Icon(PhosphorIconsLight.usersThree),
+                children: <Widget>[
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  tabBarNetwork(),
+                ],
               ),
-              children: <Widget>[
-                ListTile(
-                  title: Text('Menu'),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            const ExpansionTile(
-              title: Text("Markt"),
-              backgroundColor: Color.fromARGB(117, 241, 238, 238),
-              collapsedBackgroundColor: Color(0xffF1EEEE),
-              shape: Border.fromBorderSide(BorderSide.none),
-              leading: CircleAvatar(
-                backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                child: Icon(PhosphorIconsLight.scan),
+              const SizedBox(
+                height: 8,
               ),
-              children: <Widget>[
-                ListTile(
-                  title: Text('Menu'),
+              const ExpansionTile(
+                title: Text("Spaces"),
+                backgroundColor: Color.fromARGB(117, 237, 240, 255),
+                collapsedBackgroundColor: Color(0xffEDF0FF),
+                shape: Border.fromBorderSide(BorderSide.none),
+                leading: badges.Badge(
+                  showBadge: false,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.planet),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-          ],
+                children: <Widget>[
+                  ListTile(
+                    title: Text('Menu'),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              const ExpansionTile(
+                title: Text("Groups"),
+                backgroundColor: Color.fromARGB(117, 231, 241, 255),
+                collapsedBackgroundColor: Color(0xffE7F1FF),
+                shape: Border.fromBorderSide(BorderSide.none),
+                leading: badges.Badge(
+                  showBadge: true,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.usersThree),
+                ),
+                children: <Widget>[
+                  ListTile(
+                    title: Text('Menu'),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              const ExpansionTile(
+                title: Text("Markt"),
+                backgroundColor: Color.fromARGB(117, 241, 238, 238),
+                collapsedBackgroundColor: Color(0xffF1EEEE),
+                shape: Border.fromBorderSide(BorderSide.none),
+                leading: badges.Badge(
+                  showBadge: false,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.qrCode),
+                ),
+                children: <Widget>[
+                  ListTile(
+                    title: Text('Menu'),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+            ],
+          ),
         ),
       ),
     );

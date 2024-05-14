@@ -1,26 +1,85 @@
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
+import 'package:mvp_phoniron/src/config/chat_cards.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 Widget tabBarNetwork() {
   return const SizedBox(
-    height: 150,
+    height: 400,
     child: DefaultTabController(
-      length: 3,
+      length: 5,
       child: Column(
         children: [
           TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
+              Tab(
+                child: badges.Badge(
+                  showBadge: true,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '',
+                    style: TextStyle(color: Colors.white, fontSize: 9),
+                  ),
+                  child: Icon(PhosphorIconsLight.chatDots),
+                ),
+              ),
+              Tab(
+                child: badges.Badge(
+                  showBadge: false,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '0',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.addressBook),
+                ),
+              ),
+              Tab(
+                child: badges.Badge(
+                  showBadge: true,
+                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
+                  badgeContent: Text(
+                    '',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.envelopeSimple),
+                ),
+              ),
+              Tab(
+                child: badges.Badge(
+                  showBadge: false,
+                  badgeContent: Text(
+                    '0',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.userCircleCheck),
+                ),
+              ),
+              Tab(
+                child: badges.Badge(
+                  showBadge: false,
+                  badgeContent: Text(
+                    '0',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                  child: Icon(PhosphorIconsLight.gear),
+                ),
+              ),
             ],
           ),
           SizedBox(height: 8),
           Expanded(
             child: TabBarView(
               children: [
-                Icon(Icons.directions_car),
-                Icon(Icons.directions_transit),
-                Icon(Icons.directions_bike),
+                Column(
+                  children: [
+                    ChatCard01(),
+                  ],
+                ),
+                Column(),
+                Column(),
+                Column(),
+                Column(),
               ],
             ),
           ),

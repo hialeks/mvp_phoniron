@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
+  badges: ^3.1.2
   dependency_validator: ^4.0.0
   flex_color_scheme: ^7.3.1
   flutter:
@@ -15,6 +16,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.4.0
   google_fonts: ^6.2.1
+  icon_badge: ^1.0.0
   material_design_icons_flutter: ^7.0.7296
   phosphor_flutter: ^2.1.0
   rename_app: ^1.3.2
@@ -53,6 +55,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/avatars/
+    - assets/country_flags/
     - assets/backgrounds/
     - assets/app_elements/
     - assets/app_icons/
