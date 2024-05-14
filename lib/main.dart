@@ -3,7 +3,7 @@ import 'package:mvp_phoniron/src/app.dart';
 
 Future<void> main() async {
   await Future.delayed(
-    const Duration(seconds: 1), //! ???
+    const Duration(seconds: 5),
   );
 
   runApp(

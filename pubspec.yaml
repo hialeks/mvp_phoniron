@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   dependency_validator: ^4.0.0
-  expansion_tile_card: ^3.0.0
   flex_color_scheme: ^7.3.1
   flutter:
     sdk: flutter
@@ -19,7 +18,6 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   phosphor_flutter: ^2.1.0
   rename_app: ^1.3.2
-  sync_scroll_library: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -46,10 +44,10 @@ flutter_launcher_icons:
 
 flutter_native_splash:
   color: "#006973"
-  image: assets/logos/logo_white.png
+  image: assets/logos/gif_logo.gif
   android_12:
     color: "#006973"
-    image: assets/logos/logo_white.png
+    image: assets/logos/gif_logo.gif
 
 flutter:
   uses-material-design: true
