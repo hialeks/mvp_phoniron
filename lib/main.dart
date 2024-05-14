@@ -3,10 +3,10 @@ import 'package:mvp_phoniron/src/app.dart';
 
 Future<void> main() async {
   await Future.delayed(
-    const Duration(seconds: 3),
+    const Duration(seconds: 1), //! ???
   );
 
-  runApp(const MaterialApp(
-    home: App(),
-  ));
+  runApp(
+    const App(),
+  );
 }

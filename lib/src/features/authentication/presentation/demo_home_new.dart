@@ -45,8 +45,6 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
                 child: Icon(PhosphorIconsLight.treeStructure),
               ),
               children: <Widget>[
-                //! Scheiße!!!
-
                 _tabBarNetwork(),
               ],
             ),
@@ -96,7 +94,7 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
               shape: Border.fromBorderSide(BorderSide.none),
               leading: CircleAvatar(
                 backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                child: Icon(PhosphorIconsLight.qrCode),
+                child: Icon(PhosphorIconsLight.scan),
               ),
               children: <Widget>[
                 ListTile(
@@ -114,28 +112,31 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
   }
 
   Widget _tabBarNetwork() {
-    return const DefaultTabController(
-      length: 3,
-      child: Column(
-        children: [
-          TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
-            ],
-          ),
-          SizedBox(height: 8),
-          Expanded(
-            child: TabBarView(
-              children: [
-                Icon(Icons.directions_car),
-                Icon(Icons.directions_transit),
-                Icon(Icons.directions_bike),
+    return const SizedBox(
+      height: 100,
+      child: DefaultTabController(
+        length: 3,
+        child: Column(
+          children: [
+            TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
               ],
             ),
-          ),
-        ],
+            SizedBox(height: 8),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  Icon(Icons.directions_car),
+                  Icon(Icons.directions_transit),
+                  Icon(Icons.directions_bike),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
