@@ -85,14 +85,10 @@ Widget buildDrawer(BuildContext context) {
           leading: const Icon(Icons.logout),
           title: const Text('Log Out'),
           onTap: () {
-            // Navigator.pushReplacement(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => LoginScreen(
-            //       databaseRepository: widget.databaseRepository,
-            //     ),
-            //   ),
-            // );
+            // Update the state of the app
+            // ...
+            // Then close the drawer
+            Navigator.pop(context);
           },
         ),
         ListTile(
