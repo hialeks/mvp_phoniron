@@ -44,10 +44,10 @@ flutter_launcher_icons:
 
 flutter_native_splash:
   color: "#006973"
-  image: assets/logos/gif_logo.gif
+  image: assets/logos/logo_white.png
   android_12:
     color: "#006973"
-    image: assets/logos/gif_logo.gif
+    image: assets/logos/logo_white.png
 
 flutter:
   uses-material-design: true
