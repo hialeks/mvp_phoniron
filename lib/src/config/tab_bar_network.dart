@@ -5,7 +5,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 Widget tabBarNetwork() {
   return const SizedBox(
-    height: 400,
+    height: 790,
     child: DefaultTabController(
       length: 5,
       child: Column(
@@ -74,6 +74,14 @@ Widget tabBarNetwork() {
                 Column(
                   children: [
                     ChatCard01(),
+                    ChatCard02(),
+                    ChatCard04(),
+                    ChatCard05(),
+                    ChatCard06(),
+                    ChatCard07(),
+                    ChatCard08(),
+                    ChatCard09(),
+                    ChatCard10(),
                   ],
                 ),
                 Column(),

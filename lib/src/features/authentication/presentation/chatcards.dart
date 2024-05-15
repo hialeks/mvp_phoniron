@@ -65,9 +65,9 @@ class MyApp extends StatelessWidget {
             5,
             (index) => ChatCard(
               name: 'User ${index + 1}',
-              nationality: 'flag', // Име на файла за снимка на националност
-              contactType: 'family', // Пример за тип на контакта
-              lastAction: 'Sent a post', // Последно действие
+              nationality: 'flag',
+              contactType: 'family',
+              lastAction: 'Sent a post',
             ),
           ),
         ),
