@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
-import 'package:mvp_phoniron/src/features/authentication/presentation/demo_account.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/faq_screen.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/login_screen.dart';
+import 'package:mvp_phoniron/src/features/demo/demo_enter.dart';
 
 class SignUpScreen extends StatefulWidget {
   // Attribute

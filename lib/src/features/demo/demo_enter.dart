@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
-import 'package:mvp_phoniron/src/features/authentication/presentation/demo_home.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/login_screen.dart';
+import 'package:mvp_phoniron/src/features/demo/demo_home.dart';
 
 class DemoAccount extends StatefulWidget {
   final DatabaseRepository databaseRepository;

@@ -5,13 +5,12 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 Widget buildDrawer(BuildContext context) {
   return Drawer(
     child: ListView(
-      // Important: Remove any padding from the ListView.
-      padding: EdgeInsets.zero,
+      //padding: EdgeInsets.zero,
       children: [
         const DrawerHeader(
           decoration: BoxDecoration(
             //color: Color(0xff1b828c),
-            color: Color.fromARGB(148, 27, 131, 140),
+            color: Color.fromARGB(255, 27, 131, 140),
           ),
           child: Text(
             'phoniron',
