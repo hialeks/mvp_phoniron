@@ -10,7 +10,7 @@ class ChatCard01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -55,7 +55,7 @@ class ChatCard02 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -100,7 +100,7 @@ class ChatCard03 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -145,7 +145,7 @@ class ChatCard04 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: false,
@@ -190,7 +190,7 @@ class ChatCard05 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -235,7 +235,7 @@ class ChatCard06 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -280,7 +280,7 @@ class ChatCard07 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -325,7 +325,7 @@ class ChatCard08 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -370,7 +370,7 @@ class ChatCard09 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: true,
@@ -415,7 +415,7 @@ class ChatCard10 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0.1,
+      elevation: 0,
       child: ListTile(
         leading: const badges.Badge(
           showBadge: false,
@@ -448,6 +448,29 @@ class ChatCard10 extends StatelessWidget {
         ),
         subtitle: const Text("Sent a post"),
       ),
+    );
+  }
+}
+
+class ExpandedChatMenu extends StatelessWidget {
+  const ExpandedChatMenu({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        ChatCard01(),
+        ChatCard02(),
+        ChatCard04(),
+        ChatCard05(),
+        ChatCard06(),
+        ChatCard07(),
+        ChatCard08(),
+        ChatCard09(),
+        ChatCard10(),
+      ],
     );
   }
 }

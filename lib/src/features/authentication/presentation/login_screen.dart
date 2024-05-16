@@ -3,7 +3,7 @@ import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/faq_screen.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/sign_up_screen.dart';
 import 'package:mvp_phoniron/src/features/demo/demo_enter.dart';
-import 'package:mvp_phoniron/src/features/overview/presentation/home_screen.dart';
+import 'package:mvp_phoniron/src/features/home/presentation/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   // Attribute
