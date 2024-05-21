@@ -7,13 +7,13 @@ import 'package:mvp_phoniron/src/features/Class/domain/user_profile.dart';
 import 'package:mvp_phoniron/src/features/Class/presentation/user_type.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/login_screen.dart';
 
-class App extends StatelessWidget {
-  const App({super.key});
+class Phoniron extends StatelessWidget {
+  const Phoniron({super.key});
 
   @override
   Widget build(BuildContext context) {
     var userProfile = UserProfile(
-      phonironObjectPrimaryKey: "QWER-TZUI-OPAS-DFGH",
+      phonironObjectPrimaryKey: "QWER-T7UI-OPAS-DFGH",
       userID: "405968",
       profileTypes: UserType(profileTypes: [1.0, 2.0]),
       userFullName: "Aleksander Stefanov Uzunov",
