@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_phoniron/src/config/widgets/expanded_chat_menu.dart';
-import 'package:mvp_phoniron/src/config/widgets/expanded_contacts_menu.dart';
-import 'package:mvp_phoniron/src/config/widgets/expanded_email_menu.dart';
-import 'package:mvp_phoniron/src/config/widgets/expanded_settings_menu.dart';
-import 'package:mvp_phoniron/src/config/widgets/expanded_userprofile_menu.dart';
 import 'package:mvp_phoniron/src/config/widgets/icon_tab_badge.dart';
+import 'package:mvp_phoniron/src/config/widgets/network/expanded_chat_menu.dart';
+import 'package:mvp_phoniron/src/config/widgets/network/expanded_contacts_menu.dart';
+import 'package:mvp_phoniron/src/config/widgets/network/expanded_email_menu.dart';
+import 'package:mvp_phoniron/src/config/widgets/network/expanded_settings_menu.dart';
+import 'package:mvp_phoniron/src/config/widgets/network/expanded_userprofile_menu.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-Widget tabBarSpaces() {
+Widget tabBarMarkt() {
   return const SizedBox(
     //!Scheiße!
     height: 777, //!Scheiße!
