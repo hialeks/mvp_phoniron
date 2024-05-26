@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_phoniron/src/config/widgets/login_providers.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/faq_screen.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/sign_up_screen.dart';
@@ -160,8 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     },
                     style: ButtonStyle(
-                      minimumSize:
-                          MaterialStateProperty.all(const Size(270, 50)),
+                      minimumSize: WidgetStateProperty.all(const Size(270, 50)),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
@@ -198,50 +198,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-
-                  // Login Providers
-
                   const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Image.asset(
-                          'assets/app_elements/google_icon.png',
-                          width: 25,
-                          height: 25,
-                        ),
-                        onPressed: () {},
-                      ),
-                      const SizedBox(width: 30),
-                      IconButton(
-                        icon: Image.asset(
-                          'assets/app_elements/apple_icon.png',
-                          width: 25,
-                          height: 25,
-                        ),
-                        onPressed: () {},
-                      ),
-                      const SizedBox(width: 30),
-                      IconButton(
-                        icon: Image.asset(
-                          'assets/app_elements/linkedin_icon.png',
-                          width: 25,
-                          height: 25,
-                        ),
-                        onPressed: () {},
-                      ),
-                      const SizedBox(width: 30),
-                      IconButton(
-                        icon: Image.asset(
-                          'assets/app_elements/xing_icon.png',
-                          width: 25,
-                          height: 25,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
+                  const LoginProviders(),
                   const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

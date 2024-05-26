@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_phoniron/src/config/theme.dart';
+import 'package:mvp_phoniron/src/config/styles/theme.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/data/mock_database.dart';
 import 'package:mvp_phoniron/src/features/Class/domain/address.dart';

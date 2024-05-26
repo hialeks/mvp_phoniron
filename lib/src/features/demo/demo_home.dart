@@ -1,7 +1,11 @@
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
-import 'package:mvp_phoniron/src/config/drawer.dart';
-import 'package:mvp_phoniron/src/config/tab_bar_network.dart';
+import 'package:mvp_phoniron/src/config/styles/styles.dart';
+import 'package:mvp_phoniron/src/config/widgets/drawer.dart';
+import 'package:mvp_phoniron/src/config/widgets/home_expansiontile.dart';
+import 'package:mvp_phoniron/src/config/widgets/tab_bar_groups.dart';
+import 'package:mvp_phoniron/src/config/widgets/tab_bar_markt.dart';
+import 'package:mvp_phoniron/src/config/widgets/tab_bar_network.dart';
+import 'package:mvp_phoniron/src/config/widgets/tab_bar_spaces.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class DemoHomeNew extends StatefulWidget {
@@ -35,104 +39,41 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              const SizedBox(
-                height: 8,
+              // Network
+              HomeExpansionTile(
+                title: "Network",
+                backgroundColor: networkBackground,
+                collapsedBackgroundColor: networkCollapsedBackground,
+                showBadge: true,
+                icon: PhosphorIconsLight.treeStructure,
+                tabBar: tabBarNetwork(),
               ),
-              ExpansionTile(
-                title: const Text("Network"),
-                backgroundColor: const Color.fromARGB(117, 242, 246, 247),
-                collapsedBackgroundColor: const Color(0xffF1F6F7),
-                shape: const Border.fromBorderSide(BorderSide.none),
-                leading: const badges.Badge(
-                  showBadge: true,
-                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
-                  badgeContent: Text(
-                    '',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
-                  child: Icon(PhosphorIconsLight.treeStructure),
-                ),
-                children: <Widget>[
-                  const SizedBox(
-                    height: 8,
-                  ),
-
-                  //! TabBarNetwork
-
-                  tabBarNetwork(),
-                ],
+              // Spaces
+              HomeExpansionTile(
+                title: "Spaces",
+                backgroundColor: spacesBackground,
+                collapsedBackgroundColor: spacesCollapsedBackground,
+                showBadge: false,
+                icon: PhosphorIconsLight.planet,
+                tabBar: tabBarSpaces(),
               ),
-              const SizedBox(
-                height: 8,
+              // Groups
+              HomeExpansionTile(
+                title: "Groups",
+                backgroundColor: groupsBackground,
+                collapsedBackgroundColor: groupsCollapsedBackground,
+                showBadge: true,
+                icon: PhosphorIconsLight.usersThree,
+                tabBar: tabBarGroups(),
               ),
-              const ExpansionTile(
-                title: Text("Spaces"),
-                backgroundColor: Color.fromARGB(117, 237, 240, 255),
-                collapsedBackgroundColor: Color(0xffEDF0FF),
-                shape: Border.fromBorderSide(BorderSide.none),
-                leading: badges.Badge(
-                  showBadge: false,
-                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
-                  badgeContent: Text(
-                    '',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
-                  child: Icon(PhosphorIconsLight.planet),
-                ),
-                children: <Widget>[
-                  ListTile(
-                    title: Text('Menu'),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const ExpansionTile(
-                title: Text("Groups"),
-                backgroundColor: Color.fromARGB(117, 231, 241, 255),
-                collapsedBackgroundColor: Color(0xffE7F1FF),
-                shape: Border.fromBorderSide(BorderSide.none),
-                leading: badges.Badge(
-                  showBadge: true,
-                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
-                  badgeContent: Text(
-                    '',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
-                  child: Icon(PhosphorIconsLight.usersThree),
-                ),
-                children: <Widget>[
-                  ListTile(
-                    title: Text('Menu'),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const ExpansionTile(
-                title: Text("Markt"),
-                backgroundColor: Color.fromARGB(117, 241, 238, 238),
-                collapsedBackgroundColor: Color(0xffF1EEEE),
-                shape: Border.fromBorderSide(BorderSide.none),
-                leading: badges.Badge(
-                  showBadge: false,
-                  badgeStyle: badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
-                  badgeContent: Text(
-                    '',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
-                  child: Icon(PhosphorIconsLight.qrCode),
-                ),
-                children: <Widget>[
-                  ListTile(
-                    title: Text('Menu'),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
+              // Markt
+              HomeExpansionTile(
+                title: "Markt",
+                backgroundColor: marktBackground,
+                collapsedBackgroundColor: marktCollapsedBackground,
+                showBadge: false,
+                icon: PhosphorIconsLight.qrCode,
+                tabBar: tabBarMarkt(),
               ),
             ],
           ),
