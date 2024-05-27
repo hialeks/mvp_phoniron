@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/config/styles/styles.dart';
-import 'package:mvp_phoniron/src/config/widgets/drawer.dart';
+import 'package:mvp_phoniron/src/config/widgets/elements/drawer.dart';
+import 'package:mvp_phoniron/src/config/widgets/elements/home_expansiontile.dart';
 import 'package:mvp_phoniron/src/config/widgets/groups/tab_bar_groups.dart';
-import 'package:mvp_phoniron/src/config/widgets/home_expansiontile.dart';
 import 'package:mvp_phoniron/src/config/widgets/markt/tab_bar_markt.dart';
 import 'package:mvp_phoniron/src/config/widgets/network/tab_bar_network.dart';
 import 'package:mvp_phoniron/src/config/widgets/spaces/tab_bar_spaces.dart';

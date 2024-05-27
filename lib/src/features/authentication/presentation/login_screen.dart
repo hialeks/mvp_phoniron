@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_phoniron/src/config/widgets/login_providers.dart';
+import 'package:mvp_phoniron/src/config/widgets/elements/login_providers.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/faq_screen.dart';
 import 'package:mvp_phoniron/src/features/authentication/presentation/sign_up_screen.dart';
