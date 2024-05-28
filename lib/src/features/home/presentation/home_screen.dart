@@ -21,39 +21,14 @@ class OverviewScreen extends StatefulWidget {
 }
 
 class _OverviewScreenState extends State<OverviewScreen> {
-  UniqueKey item1Key = UniqueKey();
-  UniqueKey item2Key = UniqueKey();
-  UniqueKey item3Key = UniqueKey();
-  UniqueKey item4Key = UniqueKey();
-
-  bool isItem1Expanded = false;
-  bool isItem2Expanded = false;
-  bool isItem3Expanded = false;
-  bool isItem4Expanded = false;
+  int? _expandedTileIndex;
 
   void _onExpansionChanged(bool expanded, int index) {
     setState(() {
-      isItem1Expanded = index == 1 ? expanded : false;
-      isItem2Expanded = index == 2 ? expanded : false;
-      isItem3Expanded = index == 3 ? expanded : false;
-      isItem4Expanded = index == 4 ? expanded : false;
-
-      if (index == 1 && expanded) {
-        item2Key = UniqueKey();
-        item3Key = UniqueKey();
-        item4Key = UniqueKey();
-      } else if (index == 2 && expanded) {
-        item1Key = UniqueKey();
-        item3Key = UniqueKey();
-        item4Key = UniqueKey();
-      } else if (index == 3 && expanded) {
-        item1Key = UniqueKey();
-        item2Key = UniqueKey();
-        item4Key = UniqueKey();
-      } else if (index == 4 && expanded) {
-        item1Key = UniqueKey();
-        item2Key = UniqueKey();
-        item3Key = UniqueKey();
+      if (expanded) {
+        _expandedTileIndex = index;
+      } else if (_expandedTileIndex == index) {
+        _expandedTileIndex = null;
       }
     });
   }
@@ -84,10 +59,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
             children: <Widget>[
               // Network
               HomeExpansionTile(
-                key: item1Key,
-                initiallyExpanded: isItem1Expanded,
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 0,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 1);
+                  _onExpansionChanged(expanded, 0);
                 },
                 title: "Network",
                 backgroundColor: networkBackground,
@@ -98,10 +73,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
               // Spaces
               HomeExpansionTile(
-                key: item2Key,
-                initiallyExpanded: isItem2Expanded,
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 1,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 2);
+                  _onExpansionChanged(expanded, 1);
                 },
                 title: "Spaces",
                 backgroundColor: spacesBackground,
@@ -112,10 +87,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
               // Groups
               HomeExpansionTile(
-                key: item3Key,
-                initiallyExpanded: isItem3Expanded,
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 2,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 3);
+                  _onExpansionChanged(expanded, 2);
                 },
                 title: "Groups",
                 backgroundColor: groupsBackground,
@@ -126,10 +101,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
               // Markt
               HomeExpansionTile(
-                key: item4Key,
-                initiallyExpanded: isItem4Expanded,
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 3,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 4);
+                  _onExpansionChanged(expanded, 3);
                 },
                 title: "Markt",
                 backgroundColor: marktBackground,
