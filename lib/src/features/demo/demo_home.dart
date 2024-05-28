@@ -16,6 +16,18 @@ class DemoHomeNew extends StatefulWidget {
 }
 
 class _DemoHomeNewState extends State<DemoHomeNew> {
+  int? _expandedTileIndex;
+
+  void _onExpansionChanged(bool expanded, int index) {
+    setState(() {
+      if (expanded) {
+        _expandedTileIndex = index;
+      } else if (_expandedTileIndex == index) {
+        _expandedTileIndex = null;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +49,16 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
       drawer: buildDrawer(context),
       body: SafeArea(
         child: SingleChildScrollView(
+          padding: const EdgeInsets.all(2.0),
           child: Column(
             children: <Widget>[
               // Network
               HomeExpansionTile(
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 0,
+                onExpansionChanged: (expanded) {
+                  _onExpansionChanged(expanded, 0);
+                },
                 title: "Network",
                 backgroundColor: networkBackground,
                 collapsedBackgroundColor: networkCollapsedBackground,
@@ -50,6 +68,11 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
               ),
               // Spaces
               HomeExpansionTile(
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 1,
+                onExpansionChanged: (expanded) {
+                  _onExpansionChanged(expanded, 1);
+                },
                 title: "Spaces",
                 backgroundColor: spacesBackground,
                 collapsedBackgroundColor: spacesCollapsedBackground,
@@ -59,6 +82,11 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
               ),
               // Groups
               HomeExpansionTile(
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 2,
+                onExpansionChanged: (expanded) {
+                  _onExpansionChanged(expanded, 2);
+                },
                 title: "Groups",
                 backgroundColor: groupsBackground,
                 collapsedBackgroundColor: groupsCollapsedBackground,
@@ -68,6 +96,11 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
               ),
               // Markt
               HomeExpansionTile(
+                key: UniqueKey(),
+                initiallyExpanded: _expandedTileIndex == 3,
+                onExpansionChanged: (expanded) {
+                  _onExpansionChanged(expanded, 3);
+                },
                 title: "Markt",
                 backgroundColor: marktBackground,
                 collapsedBackgroundColor: marktCollapsedBackground,

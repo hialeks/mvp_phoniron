@@ -1,3 +1,5 @@
+// home_expansiontile.dart
+
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,8 @@ class HomeExpansionTile extends StatelessWidget {
   final bool showBadge;
   final IconData icon;
   final Widget tabBar;
+  final ValueChanged<bool>? onExpansionChanged;
+  final bool initiallyExpanded;
 
   const HomeExpansionTile({
     super.key,
@@ -17,6 +21,8 @@ class HomeExpansionTile extends StatelessWidget {
     required this.showBadge,
     required this.icon,
     required this.tabBar,
+    this.onExpansionChanged,
+    this.initiallyExpanded = false,
   });
 
   @override
@@ -40,6 +46,8 @@ class HomeExpansionTile extends StatelessWidget {
             ),
             child: Icon(icon),
           ),
+          onExpansionChanged: onExpansionChanged,
+          initiallyExpanded: initiallyExpanded,
           children: <Widget>[
             const SizedBox(
               height: 8,
