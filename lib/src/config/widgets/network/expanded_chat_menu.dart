@@ -2,6 +2,10 @@ import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+//! Alles wird wieder über ListView.builder gemacht
+//! Alles wird wieder über ListView.builder gemacht
+//! Alles wird wieder über ListView.builder gemacht
+
 class ChatCard01 extends StatefulWidget {
   const ChatCard01({super.key});
 
