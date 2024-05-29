@@ -1,4 +1,4 @@
-import '../features/Class/domain/user_profile.dart';
+import '../features/authentication/domain/user_profile.dart';
 
 abstract class DatabaseRepository {
   void registerUser(UserProfile userProfile);

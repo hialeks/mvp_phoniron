@@ -1,4 +1,4 @@
-import '../features/Class/domain/user_profile.dart';
+import '../features/authentication/domain/user_profile.dart';
 import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {

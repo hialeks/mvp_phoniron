@@ -2,11 +2,14 @@ import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class ChatCard01 extends StatelessWidget {
-  const ChatCard01({
-    super.key,
-  });
+class ChatCard01 extends StatefulWidget {
+  const ChatCard01({super.key});
 
+  @override
+  State<ChatCard01> createState() => _ChatCard01State();
+}
+
+class _ChatCard01State extends State<ChatCard01> {
   @override
   Widget build(BuildContext context) {
     return Card(

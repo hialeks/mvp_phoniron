@@ -1,6 +1,6 @@
-import '../presentation/user_type.dart';
 import 'address.dart';
 import 'primary_key.dart';
+import 'user_type.dart';
 
 class UserProfile extends PrimaryKey {
   UserType profileTypes;
