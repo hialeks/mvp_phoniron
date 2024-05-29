@@ -69,7 +69,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 collapsedBackgroundColor: networkCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.treeStructure,
-                tabBar: tabBarNetwork(),
+                tabBar: tabBarNetwork(context),
               ),
               // Spaces
               HomeExpansionTile(
@@ -83,7 +83,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 collapsedBackgroundColor: spacesCollapsedBackground,
                 showBadge: false,
                 icon: PhosphorIconsLight.planet,
-                tabBar: tabBarSpaces(),
+                tabBar: tabBarSpaces(context),
               ),
               // Groups
               HomeExpansionTile(
@@ -97,7 +97,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 collapsedBackgroundColor: groupsCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.usersThree,
-                tabBar: tabBarGroups(),
+                tabBar: tabBarGroups(context), // Предаване на контекста
               ),
               // Markt
               HomeExpansionTile(
@@ -111,7 +111,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 collapsedBackgroundColor: marktCollapsedBackground,
                 showBadge: false,
                 icon: PhosphorIconsLight.qrCode,
-                tabBar: tabBarMarkt(),
+                tabBar: tabBarMarkt(context),
               ),
             ],
           ),

@@ -3,7 +3,7 @@
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 
-class HomeExpansionTile extends StatelessWidget {
+class HomeExpansionTile extends StatefulWidget {
   final String title;
   final Color backgroundColor;
   final Color collapsedBackgroundColor;
@@ -26,6 +26,11 @@ class HomeExpansionTile extends StatelessWidget {
   });
 
   @override
+  State<HomeExpansionTile> createState() => _HomeExpansionTileState();
+}
+
+class _HomeExpansionTileState extends State<HomeExpansionTile> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -33,26 +38,27 @@ class HomeExpansionTile extends StatelessWidget {
           height: 8,
         ),
         ExpansionTile(
-          title: Text(title),
-          backgroundColor: backgroundColor,
-          collapsedBackgroundColor: collapsedBackgroundColor,
+          enabled: true,
+          title: Text(widget.title),
+          backgroundColor: widget.backgroundColor,
+          collapsedBackgroundColor: widget.collapsedBackgroundColor,
           shape: const Border.fromBorderSide(BorderSide.none),
           leading: badges.Badge(
-            showBadge: showBadge,
+            showBadge: widget.showBadge,
             badgeStyle: const badges.BadgeStyle(badgeColor: Color(0xff1C828C)),
             badgeContent: const Text(
               '',
               style: TextStyle(color: Colors.white, fontSize: 10),
             ),
-            child: Icon(icon),
+            child: Icon(widget.icon),
           ),
-          onExpansionChanged: onExpansionChanged,
-          initiallyExpanded: initiallyExpanded,
+          onExpansionChanged: widget.onExpansionChanged,
+          initiallyExpanded: widget.initiallyExpanded,
           children: <Widget>[
             const SizedBox(
               height: 8,
             ),
-            tabBar,
+            widget.tabBar,
           ],
         ),
       ],

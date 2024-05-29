@@ -15,7 +15,8 @@ class DemoHomeNew extends StatefulWidget {
   State<DemoHomeNew> createState() => _DemoHomeNewState();
 }
 
-class _DemoHomeNewState extends State<DemoHomeNew> {
+class _DemoHomeNewState extends State<DemoHomeNew>
+    with SingleTickerProviderStateMixin {
   int? _expandedTileIndex;
 
   void _onExpansionChanged(bool expanded, int index) {
@@ -26,6 +27,11 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
         _expandedTileIndex = null;
       }
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -64,7 +70,7 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
                 collapsedBackgroundColor: networkCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.treeStructure,
-                tabBar: tabBarNetwork(),
+                tabBar: tabBarNetwork(context),
               ),
               // Spaces
               HomeExpansionTile(
@@ -78,7 +84,7 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
                 collapsedBackgroundColor: spacesCollapsedBackground,
                 showBadge: false,
                 icon: PhosphorIconsLight.planet,
-                tabBar: tabBarSpaces(),
+                tabBar: tabBarSpaces(context),
               ),
               // Groups
               HomeExpansionTile(
@@ -92,7 +98,7 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
                 collapsedBackgroundColor: groupsCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.usersThree,
-                tabBar: tabBarGroups(),
+                tabBar: tabBarGroups(context),
               ),
               // Markt
               HomeExpansionTile(
@@ -106,7 +112,7 @@ class _DemoHomeNewState extends State<DemoHomeNew> {
                 collapsedBackgroundColor: marktCollapsedBackground,
                 showBadge: false,
                 icon: PhosphorIconsLight.qrCode,
-                tabBar: tabBarMarkt(),
+                tabBar: tabBarMarkt(context),
               ),
             ],
           ),
