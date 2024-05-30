@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/config/styles/styles.dart';
 import 'package:mvp_phoniron/src/config/widgets/elements/drawer.dart';
 import 'package:mvp_phoniron/src/config/widgets/elements/home_expansiontile.dart';
-import 'package:mvp_phoniron/src/config/widgets/groups/tab_bar_groups.dart';
-import 'package:mvp_phoniron/src/config/widgets/markt/tab_bar_markt.dart';
-import 'package:mvp_phoniron/src/config/widgets/network/tab_bar_network.dart';
-import 'package:mvp_phoniron/src/config/widgets/spaces/tab_bar_spaces.dart';
 import 'package:mvp_phoniron/src/data/database_repository.dart';
+import 'package:mvp_phoniron/src/features/groups/domain/tab_bar_groups.dart';
+import 'package:mvp_phoniron/src/features/markt/domain/tab_bar_markt.dart';
+import 'package:mvp_phoniron/src/features/network/domain/tab_bar_network.dart';
+import 'package:mvp_phoniron/src/features/spaces/domain/tab_bar_spaces.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -20,15 +20,38 @@ class OverviewScreen extends StatefulWidget {
   State<OverviewScreen> createState() => _OverviewScreenState();
 }
 
-class _OverviewScreenState extends State<OverviewScreen> {
-  int? _expandedTileIndex;
+class _OverviewScreenState extends State<OverviewScreen>
+    with TickerProviderStateMixin {
+  int? expandedTileIndex;
+  late TabController tabController1;
+  late TabController tabController2;
+  late TabController tabController3;
+  late TabController tabController4;
 
-  void _onExpansionChanged(bool expanded, int index) {
+  @override
+  void initState() {
+    super.initState();
+    tabController1 = TabController(length: 5, vsync: this);
+    tabController2 = TabController(length: 0, vsync: this);
+    tabController3 = TabController(length: 0, vsync: this);
+    tabController4 = TabController(length: 0, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    tabController1.dispose();
+    tabController2.dispose();
+    tabController3.dispose();
+    tabController4.dispose();
+    super.dispose();
+  }
+
+  void onExpansionChanged(bool expanded, int index) {
     setState(() {
       if (expanded) {
-        _expandedTileIndex = index;
-      } else if (_expandedTileIndex == index) {
-        _expandedTileIndex = null;
+        expandedTileIndex = index;
+      } else if (expandedTileIndex == index) {
+        expandedTileIndex = null;
       }
     });
   }
@@ -59,10 +82,11 @@ class _OverviewScreenState extends State<OverviewScreen> {
             children: <Widget>[
               // Network
               HomeExpansionTile(
+                controller: tabController1,
                 key: UniqueKey(),
-                initiallyExpanded: _expandedTileIndex == 0,
+                initiallyExpanded: expandedTileIndex == 0,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 0);
+                  onExpansionChanged(expanded, 0);
                 },
                 title: "Network",
                 backgroundColor: networkBackground,
@@ -73,10 +97,11 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
               // Spaces
               HomeExpansionTile(
+                controller: tabController2,
                 key: UniqueKey(),
-                initiallyExpanded: _expandedTileIndex == 1,
+                initiallyExpanded: expandedTileIndex == 1,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 1);
+                  onExpansionChanged(expanded, 1);
                 },
                 title: "Spaces",
                 backgroundColor: spacesBackground,
@@ -87,24 +112,26 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
               // Groups
               HomeExpansionTile(
+                controller: tabController3,
                 key: UniqueKey(),
-                initiallyExpanded: _expandedTileIndex == 2,
+                initiallyExpanded: expandedTileIndex == 2,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 2);
+                  onExpansionChanged(expanded, 2);
                 },
                 title: "Groups",
                 backgroundColor: groupsBackground,
                 collapsedBackgroundColor: groupsCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.usersThree,
-                tabBar: tabBarGroups(context), // Предаване на контекста
+                tabBar: tabBarGroups(context),
               ),
               // Markt
               HomeExpansionTile(
+                controller: tabController4,
                 key: UniqueKey(),
-                initiallyExpanded: _expandedTileIndex == 3,
+                initiallyExpanded: expandedTileIndex == 3,
                 onExpansionChanged: (expanded) {
-                  _onExpansionChanged(expanded, 3);
+                  onExpansionChanged(expanded, 3);
                 },
                 title: "Markt",
                 backgroundColor: marktBackground,

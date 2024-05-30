@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/config/styles/styles.dart';
 import 'package:mvp_phoniron/src/config/widgets/elements/drawer.dart';
 import 'package:mvp_phoniron/src/config/widgets/elements/home_expansiontile.dart';
-import 'package:mvp_phoniron/src/config/widgets/groups/tab_bar_groups.dart';
-import 'package:mvp_phoniron/src/config/widgets/markt/tab_bar_markt.dart';
-import 'package:mvp_phoniron/src/config/widgets/network/tab_bar_network.dart';
-import 'package:mvp_phoniron/src/config/widgets/spaces/tab_bar_spaces.dart';
+import 'package:mvp_phoniron/src/features/groups/domain/tab_bar_groups.dart';
+import 'package:mvp_phoniron/src/features/markt/domain/tab_bar_markt.dart';
+import 'package:mvp_phoniron/src/features/network/domain/tab_bar_network.dart';
+import 'package:mvp_phoniron/src/features/spaces/domain/tab_bar_spaces.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class DemoHomeNew extends StatefulWidget {
@@ -16,8 +16,30 @@ class DemoHomeNew extends StatefulWidget {
 }
 
 class _DemoHomeNewState extends State<DemoHomeNew>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   int? _expandedTileIndex;
+  late TabController _tabController1;
+  late TabController _tabController2;
+  late TabController _tabController3;
+  late TabController _tabController4;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController1 = TabController(length: 5, vsync: this);
+    _tabController2 = TabController(length: 0, vsync: this);
+    _tabController3 = TabController(length: 0, vsync: this);
+    _tabController4 = TabController(length: 0, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController1.dispose();
+    _tabController2.dispose();
+    _tabController3.dispose();
+    _tabController4.dispose();
+    super.dispose();
+  }
 
   void _onExpansionChanged(bool expanded, int index) {
     setState(() {
@@ -27,11 +49,6 @@ class _DemoHomeNewState extends State<DemoHomeNew>
         _expandedTileIndex = null;
       }
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override
@@ -60,6 +77,7 @@ class _DemoHomeNewState extends State<DemoHomeNew>
             children: <Widget>[
               // Network
               HomeExpansionTile(
+                controller: _tabController1,
                 key: UniqueKey(),
                 initiallyExpanded: _expandedTileIndex == 0,
                 onExpansionChanged: (expanded) {
@@ -74,6 +92,7 @@ class _DemoHomeNewState extends State<DemoHomeNew>
               ),
               // Spaces
               HomeExpansionTile(
+                controller: _tabController2,
                 key: UniqueKey(),
                 initiallyExpanded: _expandedTileIndex == 1,
                 onExpansionChanged: (expanded) {
@@ -88,6 +107,7 @@ class _DemoHomeNewState extends State<DemoHomeNew>
               ),
               // Groups
               HomeExpansionTile(
+                controller: _tabController3,
                 key: UniqueKey(),
                 initiallyExpanded: _expandedTileIndex == 2,
                 onExpansionChanged: (expanded) {
@@ -102,6 +122,7 @@ class _DemoHomeNewState extends State<DemoHomeNew>
               ),
               // Markt
               HomeExpansionTile(
+                controller: _tabController4,
                 key: UniqueKey(),
                 initiallyExpanded: _expandedTileIndex == 3,
                 onExpansionChanged: (expanded) {

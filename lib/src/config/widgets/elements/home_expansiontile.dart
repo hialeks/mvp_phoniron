@@ -23,6 +23,7 @@ class HomeExpansionTile extends StatefulWidget {
     required this.tabBar,
     this.onExpansionChanged,
     this.initiallyExpanded = false,
+    required TabController controller,
   });
 
   @override
