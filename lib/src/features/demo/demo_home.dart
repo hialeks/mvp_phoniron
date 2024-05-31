@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_phoniron/src/config/styles/styles.dart';
 import 'package:mvp_phoniron/src/config/widgets/elements/drawer.dart';
-import 'package:mvp_phoniron/src/config/widgets/elements/home_expansiontile.dart';
 import 'package:mvp_phoniron/src/features/groups/domain/tab_bar_groups.dart';
+import 'package:mvp_phoniron/src/features/home/domain/home_expansiontile.dart';
 import 'package:mvp_phoniron/src/features/markt/domain/tab_bar_markt.dart';
 import 'package:mvp_phoniron/src/features/network/domain/tab_bar_network.dart';
 import 'package:mvp_phoniron/src/features/spaces/domain/tab_bar_spaces.dart';
@@ -27,9 +27,9 @@ class _DemoHomeNewState extends State<DemoHomeNew>
   void initState() {
     super.initState();
     _tabController1 = TabController(length: 5, vsync: this);
-    _tabController2 = TabController(length: 0, vsync: this);
-    _tabController3 = TabController(length: 0, vsync: this);
-    _tabController4 = TabController(length: 0, vsync: this);
+    _tabController2 = TabController(length: 5, vsync: this);
+    _tabController3 = TabController(length: 5, vsync: this);
+    _tabController4 = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -60,7 +60,8 @@ class _DemoHomeNewState extends State<DemoHomeNew>
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(PhosphorIconsLight.list),
+              icon: const Icon(
+                  PhosphorIconsLight.list), // Es ist so kompliziert wegen icon.
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -75,7 +76,6 @@ class _DemoHomeNewState extends State<DemoHomeNew>
           padding: const EdgeInsets.all(2.0),
           child: Column(
             children: <Widget>[
-              // Network
               HomeExpansionTile(
                 controller: _tabController1,
                 key: UniqueKey(),
@@ -88,9 +88,8 @@ class _DemoHomeNewState extends State<DemoHomeNew>
                 collapsedBackgroundColor: networkCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.treeStructure,
-                tabBar: tabBarNetwork(context),
+                tabBar: tabBarNetwork(context, _tabController1),
               ),
-              // Spaces
               HomeExpansionTile(
                 controller: _tabController2,
                 key: UniqueKey(),
@@ -103,9 +102,8 @@ class _DemoHomeNewState extends State<DemoHomeNew>
                 collapsedBackgroundColor: spacesCollapsedBackground,
                 showBadge: false,
                 icon: PhosphorIconsLight.planet,
-                tabBar: tabBarSpaces(context),
+                tabBar: tabBarSpaces(context, _tabController2),
               ),
-              // Groups
               HomeExpansionTile(
                 controller: _tabController3,
                 key: UniqueKey(),
@@ -118,9 +116,8 @@ class _DemoHomeNewState extends State<DemoHomeNew>
                 collapsedBackgroundColor: groupsCollapsedBackground,
                 showBadge: true,
                 icon: PhosphorIconsLight.usersThree,
-                tabBar: tabBarGroups(context),
+                tabBar: tabBarGroups(context, _tabController3),
               ),
-              // Markt
               HomeExpansionTile(
                 controller: _tabController4,
                 key: UniqueKey(),
@@ -133,7 +130,7 @@ class _DemoHomeNewState extends State<DemoHomeNew>
                 collapsedBackgroundColor: marktCollapsedBackground,
                 showBadge: false,
                 icon: PhosphorIconsLight.qrCode,
-                tabBar: tabBarMarkt(context),
+                tabBar: tabBarMarkt(context, _tabController4),
               ),
             ],
           ),

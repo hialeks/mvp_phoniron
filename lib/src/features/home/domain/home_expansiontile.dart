@@ -12,6 +12,7 @@ class HomeExpansionTile extends StatefulWidget {
   final Widget tabBar;
   final ValueChanged<bool>? onExpansionChanged;
   final bool initiallyExpanded;
+  final TabController controller;
 
   const HomeExpansionTile({
     super.key,
@@ -23,7 +24,7 @@ class HomeExpansionTile extends StatefulWidget {
     required this.tabBar,
     this.onExpansionChanged,
     this.initiallyExpanded = false,
-    required TabController controller,
+    required this.controller,
   });
 
   @override
